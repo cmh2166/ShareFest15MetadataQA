@@ -11,26 +11,26 @@ Workflows for digital collections metadata can vary greatly dependent on the pla
 ##Agenda
 
 1. Introduction
-    1a. Purpose of this work
-    1b. MARC, XML, JSON; RDA, DC, MODS, DPLA MAP
-    1b. Other interest in metadata QA
-    1c. GUIs to Scripting
+    2. Purpose of this work
+    3. MARC, XML, JSON; RDA, DC, MODS, DPLA MAP
+    4. Other interest in metadata QA
+    5. GUIs to Scripting
 2. MARCEdit
-    2a. Reports
-    2b. RDA conversion
-    2c. Field usage
+    3. Reports
+    4. RDA conversion
+    5. Field usage
 3. OpenRefine
-    3a. Flatter data
-    3b. Faceting
-    3c. Facet-specific export
+    4. Flatter data
+    5. Faceting
+    6. Facet-specific export
 4. Python Scripting
-    4a. UNT Scripts modified - XML
-    4b. Pulling/Querying OAI feeds - XML
-    4c. Json Objects Review
-    4d. Pymarc Scripts for MARC Reports
+    5. UNT Scripts modified - XML
+    6. Pulling/Querying OAI feeds - XML
+    7. Json Objects Review
+    8. Pymarc Scripts for MARC Reports
 5. Catmandu
-    5a. MARC field value reports
-    5b. Fix language - not XML/Json/format or encoding specific
+    6. MARC field value reports
+    7. Fix language - not XML/Json/format or encoding specific
 6. Questions
 
 ## Contents of this Repository
