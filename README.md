@@ -1,5 +1,8 @@
-#Metadata Quality Analysis: Tools & Scripts to Check Your Data
+#Metadata Quality Analysis
+##Tools & Scripts to Check Your Data
+
 *Christina Harlow, University of Tennessee, Knoxville*
+
 *[ShareFest 2015, Nashville Tennessee](http://www.tenn-share.org/sharefestprograms#Full)*
 
 ## Abstract
