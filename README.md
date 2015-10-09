@@ -1,5 +1,5 @@
 #Metadata Quality Analysis
-##Tools & Scripts to Check Your Data
+###Tools & Scripts to Check Your Data
 
 *Christina Harlow, University of Tennessee, Knoxville*
 
@@ -19,13 +19,13 @@ Workflows for digital collections metadata can vary greatly dependent on the pla
     4. Other interest in metadata QA
     5. GUIs to Scripting
 2. MARCEdit
-    3. Reports
+    3. Reports - Field usage, Validity
     4. RDA conversion
-    5. Field usage
+    5. Examples: Ebooks, Visual Materials Reports
 3. OpenRefine
-    4. Flatter data
-    5. Faceting
-    6. Facet-specific export
+    4. Flatter data - DC, some MODS, Tabular, Json
+    5. Faceting, Facet-specific export
+    6. Example: DLTN Sets Review - Required, Reconciled Fields
 4. Python Scripting
     5. UNT Scripts modified - XML
     6. Pulling/Querying OAI feeds - XML

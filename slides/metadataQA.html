@@ -8,10 +8,10 @@
     <script src="./js/remark-0.6.0.min.js" type="text/javascript"></script>
     <style type="text/css">
       @font-face {
-        font-family: 'Droid Serif';
+        font-family: 'Cutive Mono';
         font-style: normal;
         font-weight: normal;
-        src: local('Droid Serif'), url(./fonts/Droid_Serif.woff) format('woff');
+        src: local('Cutive Mono'), url(./fonts/Cutive_Mono.woff2) format('woff2');
       }
       @font-face {
         font-family: 'Yanone Kaffeesatz';
@@ -20,8 +20,8 @@
         src: local('Yanone Kaffeesatz'), url(./fonts/Yanone_Kaffeesatz.woff) format('woff');
       }
       body {
-        font-family: 'Droid Serif';
-        font-size: 25px;
+        font-family: 'Cutive Mono';
+        font-size: 26px;
         color: #2F302D;
       }
       h1, h2, h3 {
@@ -29,24 +29,22 @@
         font-weight: 400;
         margin-bottom: 0;
       }
-      h1 { font-size: 4em; color: #272822; }
-      h2 { font-size: 3em; color: #272822; }
-      h3 { font-size: 1.75em; color: #2F302D; }
+      h1 { font-size: 4em; color: #334C00; }
+      h2 { font-size: 3em; color: #334C00; }
+      h3 { font-size: 2em; color: #334C00; }
       small { font-size: 0.5em; }
       .footnote {
         position: absolute;
         bottom: 3em;
       }
-      li p { line-height: 1.25em; }
-      .red { color: #fa0000; }
       .large { font-size: 2em; }
       a, a > code {
-        color: rgb(249, 38, 114);
+        color: #2F302D;
         text-decoration: none;
       }
       img {
-      max-width: 800px;
-      max-height: 600px;
+      max-width: 650px;
+      max-height: 500px;
       }
       code {
         -moz-border-radius: 5px;
@@ -125,9 +123,6 @@
         height: 92%;
         float: left;
       }
-        .left-column h2:last-of-type, .left-column h3:last-child {
-          color: #000;
-        }
       .right-column {
         width: 75%;
         float: right;
@@ -138,29 +133,196 @@
   <body>
     <textarea id="source">
 class: center middle
-#Metadata Quality Analysis: Tools and Scripts to Check Your Data
-*Christina Harlow, University of Tennessee, Knoxville*
-*[ShareFest 2015, Nashville Tennessee](http://www.tenn-share.org/sharefestprograms#Full)*
+#Metadata Quality Analysis
+###Tools &amp; Scripts to Check Your Data
+
+Christina Harlow, UT Knoxville
+
+[ShareFest 2015, Nashville Tennessee](http://www.tenn-share.org/sharefestprograms#Full)
+---
+class: center middle
+##Slides &amp; Examples
+http://bit.ly/MetadataQA
+---
+class: middle
+##Introduction
+- Need for metadata QC review tools
+- Use cases => Examples
+- GUIs to Scripting
+- Working with:
+  - MARC, XML, Json
+  - DC, MODS, DPLA MAP v.4
+  - RDA, AACR2, DACS
 
 ---
 class: center middle
-## About This Workshop
+##Method 1: MarcEdit
+MarcEdit = Freely available (but not open source) tool for working with MARC records.
 
-Workflows for digital collections metadata can vary greatly dependent on the platform or digital asset management system one is working with. However, there are ways to pull and review metadata for quality analysis work, then use that analysis to better target metadata remediation projects as well as improve indexing of this metadata. This talk will be a quick introduction to some tools and scripts available for pulling and reviewing metadata sets for quality control purposes. Use cases and examples of these tools and scripts in action, in particular for the University of Tennessee Knoxville as well as the Digital Library of Tennessee, will be presented. This short talk should inspire further community effort on documenting and sharing metadata quality analysis and control workflows, as well as possible lead to future workshops in the state.
+http://marcedit.reeset.net/
 
 ---
 class: center middle
-## Slides, Examples, + Install
-
-### Slides, Examples, Prompts, Sample Data:
-
-https://github.com/cmh2166/ShareFest15MetadataQA
+###Method 1: MarcEdit Screenshot
+![Screenshot of MarcEdit Windows](img/marcEditScreen.png)
 
 ---
 class: middle
-## Agenda
+.left-column[
+  ###MarcEdit
+]
+.right-column[
 
-  *
+- Easy to learn
+
+- Work with .mrc, .mrk, or MARC/XML
+
+- Standard conversions
+
+- Validates MARC, RDA Helper
+
+- Generates reports
+
+- Performance issues for bigger (>50k) sets
+
+- Not always/easily customizable
+
+]
+---
+class: middle
+##MarcEdit Reports at UTK
+Review Vendor Supplied, Legacy Records:
+
+  - Field Usage, Item Type Reports
+  - Generating CSV files
+  - MARC Validation Report
+
+---
+.left-column[
+  ###MarcEdit Reports at UTK
+  **Field Usage Report**
+]
+.right-column[
+  ![Image of 6XX portion of MARC Record Field Report](img/SampleFieldReport.png)
+  .footnote[
+    <small>examples > MARCEdit > FieldandTypeReports.md</small>
+    ]
+]
+
+---
+.left-column[
+  ###MarcEdit Reports at UTK
+  **Item Type Report**
+]
+.right-column[
+  ![Image of beginning of MARC Material Type Field Report](img/SampleTypeReport.png)
+  .footnote[
+    <small>examples > MARCEdit > FieldandTypeReports.md</small>
+    ]
+]
+
+---
+class: center
+.left-column[
+  ###MarcEdit Reports at UTK
+  **Generated CSV files**
+]
+.right-column[
+  ![Image of beginning of CSV generated from Visual Materials records](img/SampleVMcsv.png)
+  .footnote[
+    <small>examples > MARCEdit > GenerateCSVreports.md</small>
+    ]
+]
+
+---
+class: center
+.left-column[
+  ###MarcEdit Reports at UTK
+  **MARC Validation Report**
+]
+.right-column[
+  ![Image of MARC Validation Report](img/SampleValidationReport.png)
+  .footnote[
+    <small>examples > MARCEdit > MARCvalidation.md</small>
+    ]
+]
+
+---
+class: center middle
+##Method 2: OpenRefine
+OpenRefine = Freely available, open source tool for working with all kinds of data.
+
+http://openrefine.org/
+
+---
+class: center middle
+###Method 1: OpenRefine Screenshot
+![Screenshot of OpenRefine Window](img/openrefineScreen.png)
+
+---
+class: middle
+.left-column[
+  ###OpenRefine
+]
+.right-column[
+
+- Helpful Graphical User Interface for understanding data
+
+- Works with many types of data (better with flatter)
+
+- Faceting, Clustering, GREL, Reconciliation
+
+- Exports a number of formats/encodings
+
+- Performance issues for bigger (>150k) sets
+
+]
+
+---
+class: middle
+##OpenRefine Reports at UTK, DLTN
+Review non-MARC Metadata for Mapping, Normalization, Enhancement:
+
+  - Facet Fields
+  - Target, Export Geographic Terms
+  - Review Fields Used
+
+---
+.left-column[
+  ###OpenRefine Reports at UTK, DLTN
+  **Facet Fields**
+]
+.right-column[
+  ![](img/)
+  .footnote[
+    <small>examples > OpenRefine ></small>
+    ]
+]
+
+---
+.left-column[
+  ###OpenRefine Reports at UTK, DLTN
+  **Target, Export Geographic Terms**
+]
+.right-column[
+  ![](img/)
+  .footnote[
+    <small>examples > OpenRefine ></small>
+    ]
+]
+
+---
+class: center
+.left-column[
+  ###OpenRefine Reports at UTK
+  **Review Fields Used**
+]
+.right-column[
+  ![](img/)
+  .footnote[
+    <small>examples > OpenRefine ></small>
+    ]
+]
 
     </textarea>
     <div id="slideshow"></div>
