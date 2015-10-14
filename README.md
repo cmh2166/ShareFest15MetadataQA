@@ -23,17 +23,15 @@ Workflows for digital collections metadata can vary greatly dependent on the pla
     4. RDA conversion
     5. Examples: Ebooks, Visual Materials Reports
 3. OpenRefine
-    4. Flatter data - DC, some MODS, Tabular, Json
-    5. Faceting, Facet-specific export
-    6. Example: DLTN Sets Review - Required, Reconciled Fields
+    4. Faceting, Facet-specific export
+    5. Example: DLTN Geographic Names Focus
 4. Python Scripting
-    5. UNT Scripts modified - XML
-    6. Pulling/Querying OAI feeds - XML
+    5. Pulling/Reviewing OAI feeds
+    6. Pulling Certain Fields of OAI feeds
     7. Json Objects Review
-    8. Pymarc Scripts for MARC Reports
 5. Catmandu
-    6. MARC field value reports
     7. Fix language - not XML/Json/format or encoding specific
+    8. MARC field value reports
 6. Questions
 
 ## Contents of this Repository
