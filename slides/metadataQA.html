@@ -282,7 +282,7 @@ Review non-MARC Metadata for Mapping, Normalization, Enhancement:
   ###OpenRefine Reports at UTK, DLTN
   **Facet &amp; Cluster Fields**
 
-  <small>examples > OpenRefine > Facets.md</small>
+  <small>examples > OpenRefine > SortFacetFilters.md</small>
 ]
 .right-column[
   ![Screenshot of the OpenRefine Interface](img/OpenRefineFacet.png)
@@ -293,7 +293,7 @@ Review non-MARC Metadata for Mapping, Normalization, Enhancement:
   ###OpenRefine Reports at UTK, DLTN
   **Target Geographic Terms**
 
-  <small>examples > OpenRefine > GeographicTerms.md</small>
+  <small>examples > OpenRefine > SortFacetFilters.md</small>
 ]
 .right-column[
   ![](img/OpenRefineGeoFacet.png)
@@ -304,7 +304,7 @@ class: center middle
 ###OpenRefine Reports at UTK, DLTN
 **Export Geographic Terms**
 ![](img/GeographicTermsExport.png)
-<small>examples > OpenRefine > GeographicTermsExport.md</small>
+<small>examples > OpenRefine > SortFacetFilters.md</small>
 
 ---
 class: center middle
@@ -334,79 +334,79 @@ class: middle
 ]
 
 ---
+class: center middle
+##Standing on Shoulders of Giants...
+Python OAI parsing scripts from Mark Phillips at the University of North Texas
+
+http://github.com/vphill/metadata_breakers
+https://github.com/vphill/pyoaiharvester
+
+---
 class: middle
 ##Python Reports at UTK, DLTN
 
-  - UNT OAI scripts
+  - UNT-based OAI scripts
   - DPLA Json objects review
   - PyMarc Record Review
 
 ---
-.left-column[
-  ###Python Reports at UTK, DLTN
-  *UNT OAI scripts excerpt*
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Python > OAIreview.md</small>
-    ]
-]
+class: middle center
+###Python Reports at UTK, DLTN
+*OAI-DC script excerpt*
+
+![Main method from OAI DC analysis script](img/OAIDCreview.png)
+<small>github.com/cmh2166/metadataQA</small>
 
 ---
-.left-column[
-  ###Python Reports at UTK, DLTN
-  *UNT OAI scripts report*
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Python > OAIreview.md</small>
-    ]
-]
+class: middle center
+###Python Reports at UTK, DLTN
+*OAI-DC script report*
+
+![OAIDC Field report](img/OAIDCreport.png)
+<small>github.com/cmh2166/metadataQA</small>
 
 ---
-.left-column[
-  ###Python Reports at UTK, DLTN
-  *UNT OAI scripts elements report*
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Python > OAIreview.md</small>
-    ]
-]
+class: middle center
+*OAI-MODS script report*
+![OAIMODS Field Report](img/OAIMODSreport.png)
+<small>github.com/cmh2166/metadataQA</small>
+
 
 ---
-.left-column[
-  ###Python Reports at UTK, DLTN
-  **DPLA Json objects script excerpt**
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Python > DPLAreview.md</small>
-    ]
-]
+class: middle center
+###Python Reports at UTK, DLTN
+*OAI script field report*
+![OAI DC Format Fields Shown](img/OAIDCfields.png)
+
+<small>github.com/cmh2166/metadataQA</small>
 
 ---
-.left-column[
-  ###Python Reports at UTK, DLTN
-  **DPLA Json objects review**
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Python > DPLAreview.md</small>
-    ]
-]
+class: middle center
+###Python Reports at UTK, DLTN
+*OAIMODS script XPath report*
+![OAIMODS EDTF-compliant dates](img/OAIMODSedtfdate.png)
+<small>github.com/cmh2166/metadataQA</small>
+
+---
+class: middle center
+###Python Reports at UTK, DLTN
+**DPLA Json objects script excerpt**
+![DPLA Analysis script get elements function](img/DPLAgetelements.png)
+<small>github.com/cmh2166/metadataQA</small>
+
+---
+class: middle center
+###Python Reports at UTK, DLTN
+**DPLA Json objects report excerpt**
+![Start of DPLA data providers with items that have date of creation post 2020](img/DPLAprovider2020.png)
+<small>github.com/cmh2166/metadataQA</small>
 
 ---
 class: center middle
 ##Method 4: Catmandu
-Catmandu =
+Catmandu = data toolkit (command line client and Perl modules) developed as part of the LibreCat project
 
-
+http://librecat.org/Catmandu/
 
 ---
 class: middle
@@ -419,62 +419,61 @@ class: middle
 
 - Works with all types of data
 
+- Can be part of ETL process with many different data stores, engines, platforms, etc.
+
+- Works well with larger datasets (>100k records)
+
+- Requires some programming knowledge
+
+- Installing Perl, Catmandu &amp; dependencies can be tricky
+
 ]
 
 ---
 class: middle
-##Catmandu Reports at UTK, DLTN
+##Catmandu Reports at UTK
 
   - Saved fix routines
-  - MARC value reports
+  - MARC value reports for big sets (when MARCEdit has trouble)
 
 ---
 .left-column[
-  ###Catmandu Reports at UTK, DLTN
-  *Fix routine excerpt*
+  ###Catmandu Reports at UTK
+  *MARC URI Fix routine excerpt*
 ]
 .right-column[
-  ![](img/)
+  ![Start of MARC URI/Recon checking report](img/MARCreconfix.png)
   .footnote[
-    <small>examples > Catmandu > FixReports.md</small>
+    <small>examples > Catmandu > MARCreconReport.fix</small>
     ]
 ]
 
 ---
 .left-column[
-  ###Catmandu Reports at UTK, DLTN
-  *Fix routine report*
+  ###Catmandu Reports at UTK
+  *MARC URI - Fix routine YAML report*
 ]
 .right-column[
-  ![](img/)
+  ![Start of the MARC Recon YAML output/report](img/MARCreconYAMLreport.png)
   .footnote[
-    <small>examples > Catmandu > FixReports.md</small>
+    <small>examples > Catmandu > MARCreconReport.yaml</small>
     ]
 ]
 
 ---
-.left-column[
-  ###Catmandu Reports at UTK, DLTN
-  **Fix routine for MARC**
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Catmandu > FixMARC.md</small>
-    ]
-]
+class: center middle
+###Catmandu Reports at UTK
+**MARC General CSV Report, Fix routine Excerpt**
+![Excerpt of General MARC CSV Report Fix](img/MARCgeneralReport.png)
+<small>examples > Catmandu > MARCgeneralReport.fix</small>
 
 ---
-.left-column[
-  ###Catmandu Reports at UTK, DLTN
-  **Fix routine for MARC Report**
-]
-.right-column[
-  ![](img/)
-  .footnote[
-    <small>examples > Catmandu > FixMARC.md</small>
-    ]
-]
+class: center middle
+###Catmandu Reports at UTK, DLTN
+**Fix routine for MARC Report**
+
+![Start of the MARC general CSV report in Numbers](img/MARCgeneralCSV.png)
+<small>examples > Catmandu > MARCgeneralReport.csv</small>
 
 ---
 class: center middle

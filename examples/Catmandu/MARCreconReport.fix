@@ -1,0 +1,57 @@
+marc_map("020a",isbn.$append)
+join_field(isbn," | ")
+split_field(isbn, " | ")
+
+marc_map("245ab",title, join:" ")
+
+# Subject Identifiers?
+if marc_match('6**0', "\w+")
+  set_field("subjectRecon", "exists")
+else
+  set_field("subjectRecon", "does not exist")
+end
+
+# Name Identifiers?
+if marc_match('1**0','\w+')
+        set_field("nameRecon", "exists")
+else
+        set_field("nameRecon", "does not exist")
+end
+
+# Primary Name
+marc_map('100abcdegq024','primaryName.$append', join:" ")
+sort_field('primaryName',-uniq=>1)
+
+# Corporate Name
+marc_map('110abcdegq024','corpName.$append', join:" ")
+sort_field('corpName',-uniq=>1)
+
+# Additional Names
+marc_map('700abcdegq024','addlName.$append', join:" ")
+sort_field('addlName',-uniq=>1)
+
+# Additional Corporate Names
+marc_map('710abcdegq024','addlCorpName.$append', join:" ")
+sort_field('addlCorpName',-uniq=>1)
+
+# Geographic Subjects
+marc_map('651*','subjectGeographic.$append', join:"--")
+replace_all('subjectGeographic.*','\.$','')
+sort_field('subjectGeographic',-uniq=>1)
+
+# Name Subjects
+marc_map('600abcdefuvxyz02','subjectName.$append', join:" ")
+marc_map('610abcdefuvxyz02', 'subjectCorpName.$append', join:".")
+sort_field('subjectName',-uniq=>1)
+
+# Topical Subjects
+marc_map('650abcdefuvxyz02','subjectTopical.$append', join:"--")
+replace_all('subjectTopical.*','\.$','')
+sort_field('subjectTopical',-uniq=>1)
+
+# Genre Terms
+marc_map('655abcdefuvxyz02','genre.$append', join:" ")
+replace_all('genre.*','\.$','')
+sort_field('genre',-uniq=>1)
+
+remove_field('record')

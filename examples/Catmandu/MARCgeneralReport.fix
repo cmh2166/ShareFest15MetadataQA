@@ -1,0 +1,73 @@
+if marc_match("LDR/6","a")
+  add_field('type','language material')
+end
+if marc_match("LDR/6","c")
+  add_field('type','notated music')
+end
+if marc_match("LDR/6","d")
+  add_field('type','manuscript notated music')
+end
+if marc_match("LDR/6","e")
+  add_field('type','cartographic material')
+end
+if marc_match("LDR/6","f")
+  add_field('type','manuscript cartographic material')
+end
+if marc_match("LDR/6","g")
+  add_field('type','projected medium')
+end
+if marc_match("LDR/6","i")
+  add_field('type','nonmusical sound recording')
+end
+if marc_match("LDR/6","j")
+  add_field('type','musical sound recording')
+end
+if marc_match("LDR/6","k")
+  add_field('type','two-dimensional nonprojectable graphic')
+end
+if marc_match("LDR/6","m")
+  add_field('type','computer file')
+end
+if marc_match("LDR/6","o")
+  add_field('type','kit')
+end
+if marc_match("LDR/6","p")
+  add_field('type','mixed materials')
+end
+if marc_match("LDR/6","r")
+  add_field('type','three-dimensional artifact or naturally occurring object')
+end
+if marc_match("LDR/6","t")
+  add_field('type','manuscript language material')
+end
+
+marc_map('020az',isbn.$append, join:' | ')
+join_field(isbn, ' | ')
+
+marc_map("035a",sysNumbers.$append, join:' | ')
+join_field('sysNumbers', ' | ')
+
+marc_map('100', 'author')
+
+marc_map('110', 'corpAuthor')
+
+marc_map('245ab','title', join:" ")
+
+marc_map('245c','statementOfResp')
+
+marc_map('050','classNumber')
+
+marc_map('099','localClassNumber')
+
+marc_map('260b',publisher.$append, join:' | ')
+marc_map('264b',publisher.$append, join: ' | ')
+join_field('publisher', ' | ')
+
+marc_map('776', 'relatedVersion')
+
+marc_map('856u', 'url')
+
+retain_field(_id)
+retain_field(classNumber)
+
+
